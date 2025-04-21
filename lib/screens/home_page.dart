@@ -16,7 +16,7 @@ class _HomePageState extends State<HomePage> {
 
   void _createAgent() async {
     String name = '';
-    String persona = '';
+    String role = '';
     showDialog(
       context: context,
       builder: (ctx) => AlertDialog(
@@ -29,15 +29,15 @@ class _HomePageState extends State<HomePage> {
               onChanged: (val) => name = val,
             ),
             TextField(
-              decoration: const InputDecoration(labelText: 'Persona'),
-              onChanged: (val) => persona = val,
+              decoration: const InputDecoration(labelText: 'Role'),
+              onChanged: (val) => role = val,
             ),
           ],
         ),
         actions: [
           TextButton(
             onPressed: () {
-              _controllerService.createAgent(name, persona);
+              _controllerService.createAgent(name, role);
               Navigator.of(ctx).pop();
             },
             child: const Text('Create'),
